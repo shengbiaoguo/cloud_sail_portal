@@ -12,7 +12,9 @@ export function Section({ title, subtitle, children }: SectionProps) {
       <Container>
         <div className="mb-6">
           <h2 className="text-2xl font-semibold tracking-tight md:text-3xl">{title}</h2>
-          {subtitle ? <p className="mt-2 text-sm text-[var(--muted)] md:text-base">{subtitle}</p> : null}
+          {subtitle ? (
+            <p className="mt-2 text-sm text-[var(--muted)] md:text-base">{subtitle}</p>
+          ) : null}
         </div>
         {children}
       </Container>

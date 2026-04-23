@@ -69,7 +69,9 @@ export function mapNewsItem(raw: Record<string, unknown>): NewsItem {
   };
 }
 
-export function mapSiteConfig(raw: Array<{ config_key: string; config_value: string }>): SiteConfig {
+export function mapSiteConfig(
+  raw: Array<{ config_key: string; config_value: string }>,
+): SiteConfig {
   const result: SiteConfig = {};
   for (const item of raw) {
     const key = item.config_key;

@@ -43,7 +43,10 @@ export function LeadForm({ sourcePage }: LeadFormProps) {
   };
 
   return (
-    <form onSubmit={onSubmit} className="grid gap-3 rounded-xl border border-[var(--line)] bg-white p-4">
+    <form
+      onSubmit={onSubmit}
+      className="grid gap-3 rounded-xl border border-[var(--line)] bg-white p-4"
+    >
       <input
         value={form.name}
         onChange={(event) => setForm((prev) => ({ ...prev, name: event.target.value }))}

@@ -13,7 +13,11 @@ export function MainNav() {
   return (
     <nav aria-label="主导航" className="flex flex-wrap items-center gap-4 text-sm">
       {NAV_ITEMS.map((item) => (
-        <Link key={item.href} href={item.href} className="transition-colors hover:text-[var(--brand)]">
+        <Link
+          key={item.href}
+          href={item.href}
+          className="transition-colors hover:text-[var(--brand)]"
+        >
           {item.label}
         </Link>
       ))}

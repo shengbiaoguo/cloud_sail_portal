@@ -20,7 +20,10 @@ export default async function ServicesPage() {
           <article key={service.id} className="rounded-xl border border-[var(--line)] bg-white p-5">
             <h2 className="text-lg font-semibold">{service.title}</h2>
             <p className="mt-2 text-sm text-[var(--muted)]">{service.summary || "暂无简介"}</p>
-            <Link href={`/services/${service.slug}`} className="mt-4 inline-block text-sm text-[var(--brand)]">
+            <Link
+              href={`/services/${service.slug}`}
+              className="mt-4 inline-block text-sm text-[var(--brand)]"
+            >
               查看详情
             </Link>
           </article>

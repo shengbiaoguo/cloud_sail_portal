@@ -23,7 +23,10 @@ export default async function CasesPage() {
             <p className="mt-2 text-xs text-[var(--muted)]">
               {item.clientName || "客户待补充"} · {item.industry || "行业待补充"}
             </p>
-            <Link href={`/cases/${item.slug}`} className="mt-4 inline-block text-sm text-[var(--brand)]">
+            <Link
+              href={`/cases/${item.slug}`}
+              className="mt-4 inline-block text-sm text-[var(--brand)]"
+            >
               查看详情
             </Link>
           </article>

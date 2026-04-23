@@ -39,7 +39,10 @@ export default async function NewsListPage({ params }: NewsPageProps) {
             <h2 className="text-xl font-semibold">{item.title}</h2>
             <p className="mt-1 text-xs text-[var(--muted)]">{formatDate(item.publishedAt)}</p>
             <p className="mt-3 text-sm text-[var(--muted)]">{item.summary || "暂无摘要"}</p>
-            <Link href={`/news/${item.slug}`} className="mt-4 inline-block text-sm text-[var(--brand)]">
+            <Link
+              href={`/news/${item.slug}`}
+              className="mt-4 inline-block text-sm text-[var(--brand)]"
+            >
               阅读全文
             </Link>
           </article>
