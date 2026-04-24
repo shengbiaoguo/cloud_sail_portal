@@ -4,10 +4,16 @@ import { PaginatedResult, PaginationQuery } from "@/types/common";
 import { NewsItem } from "@/types/content";
 
 type NewsListResponse = {
-  items: Record<string, unknown>[];
-  total: number;
-  page: number;
-  page_size: number;
+  list?: Record<string, unknown>[];
+  pagination?: {
+    page?: number;
+    pageSize?: number;
+    total?: number;
+  };
+  items?: Record<string, unknown>[];
+  total?: number;
+  page?: number;
+  page_size?: number;
 };
 
 export async function getNewsList(query: PaginationQuery): Promise<PaginatedResult<NewsItem>> {
@@ -21,11 +27,16 @@ export async function getNewsList(query: PaginationQuery): Promise<PaginatedResu
       tags: ["news"],
     });
 
+    const page = Number(response.pagination?.page ?? response.page ?? query.page);
+    const pageSize = Number(response.pagination?.pageSize ?? response.page_size ?? query.pageSize);
+    const total = Number(response.pagination?.total ?? response.total ?? 0);
+    const list = response.list ?? response.items ?? [];
+
     return {
-      items: (response.items ?? []).map(mapNewsItem),
-      total: Number(response.total ?? 0),
-      page: Number(response.page ?? query.page),
-      pageSize: Number(response.page_size ?? query.pageSize),
+      items: list.map(mapNewsItem),
+      total,
+      page,
+      pageSize,
     };
   } catch {
     return {

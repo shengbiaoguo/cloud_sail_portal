@@ -2,13 +2,18 @@ import { apiFetch } from "@/lib/api/client";
 import { mapCaseStudyItem } from "@/lib/mappers/content";
 import { CaseStudyItem } from "@/types/content";
 
+type CaseListResponse = {
+  list?: Record<string, unknown>[];
+  items?: Record<string, unknown>[];
+};
+
 export async function getCaseList(): Promise<CaseStudyItem[]> {
   try {
-    const response = await apiFetch<{ items: Record<string, unknown>[] }>("/cases", {
+    const response = await apiFetch<CaseListResponse>("/cases", {
       revalidate: 300,
       tags: ["cases"],
     });
-    return (response.items ?? []).map(mapCaseStudyItem);
+    return (response.list ?? response.items ?? []).map(mapCaseStudyItem);
   } catch {
     return [];
   }

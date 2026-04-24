@@ -1,19 +1,16 @@
-import { dirname } from "node:path";
-import { fileURLToPath } from "node:url";
-import { FlatCompat } from "@eslint/eslintrc";
+import { defineConfig, globalIgnores } from "eslint/config";
+import nextVitals from "eslint-config-next/core-web-vitals";
+import nextTypescript from "eslint-config-next/typescript";
+import prettier from "eslint-config-prettier/flat";
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
-
-const compat = new FlatCompat({
-  baseDirectory: __dirname,
-});
-
-const config = [
-  ...compat.extends("next/core-web-vitals", "next/typescript", "prettier"),
+const config = defineConfig([
+  ...nextVitals,
+  ...nextTypescript,
+  prettier,
   {
-    ignores: ["node_modules/**", ".next/**", "out/**", "dist/**"],
+    rules: {},
   },
-];
+  globalIgnores(["node_modules/**", ".next/**", "out/**", "dist/**"]),
+]);
 
 export default config;

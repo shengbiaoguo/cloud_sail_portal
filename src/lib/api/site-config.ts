@@ -3,7 +3,8 @@ import { mapSiteConfig } from "@/lib/mappers/content";
 import { SiteConfig } from "@/types/content";
 
 type SiteConfigResponse = {
-  items: Array<{ config_key: string; config_value: string }>;
+  list?: Array<{ config_key: string; config_value: string }>;
+  items?: Array<{ config_key: string; config_value: string }>;
 };
 
 export async function getSiteConfig(): Promise<SiteConfig> {
@@ -12,7 +13,7 @@ export async function getSiteConfig(): Promise<SiteConfig> {
       revalidate: 3600,
       tags: ["site-config"],
     });
-    return mapSiteConfig(response.items ?? []);
+    return mapSiteConfig(response.list ?? response.items ?? []);
   } catch {
     return {};
   }
