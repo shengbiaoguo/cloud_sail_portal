@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="160" height="160" viewBox="0 0 160 160" fill="none">
+<rect width="160" height="160" rx="32" fill="white"/>
+<circle cx="80" cy="80" r="56" fill="#EAF2FF"/>
+
+<rect x="42" y="50" width="34" height="44" rx="8" stroke="#2F67E7" stroke-width="4" fill="white"/>
+<rect x="84" y="66" width="34" height="44" rx="8" stroke="#2F67E7" stroke-width="4" fill="white"/>
+<text x="59" y="80" text-anchor="middle" font-size="22" font-weight="700" fill="#2F67E7" font-family="Arial, Helvetica, sans-serif">A</text>
+<text x="101" y="97" text-anchor="middle" font-size="22" font-weight="700" fill="#2F67E7" font-family="Arial, Helvetica, sans-serif">文</text>
+<path d="M76 64c7-6 16-7 24-4" stroke="#2F67E7" stroke-width="4" stroke-linecap="round"/>
+<path d="M97 54l8 5-9 4" stroke="#2F67E7" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M84 96c-7 6-16 7-24 4" stroke="#2F67E7" stroke-width="4" stroke-linecap="round"/>
+<path d="M63 106l-8-5 9-4" stroke="#2F67E7" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+
+</svg>

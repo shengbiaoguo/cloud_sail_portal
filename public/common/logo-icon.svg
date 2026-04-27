@@ -1,0 +1,17 @@
+<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="512" height="512" rx="96" fill="none"/>
+<g stroke="#2F6BFF" stroke-width="20" stroke-linecap="round" stroke-linejoin="round">
+  <!-- spine -->
+  <path d="M256 120V392"/>
+  <!-- left page outer -->
+  <path d="M256 148C224 128 184 118 140 118C115 118 90 121 68 128V374C92 366 116 362 140 362C184 362 224 372 256 392"/>
+  <!-- right page outer -->
+  <path d="M256 148C288 128 328 118 372 118C397 118 422 121 444 128V374C420 366 396 362 372 362C328 362 288 372 256 392"/>
+  <!-- bottom page hints -->
+  <path d="M84 360C101 356 120 354 140 354C185 354 224 364 256 382"/>
+  <path d="M428 360C411 356 392 354 372 354C327 354 288 364 256 382"/>
+  <!-- top bookmark / academic accent -->
+  <path d="M240 88L256 68L272 88"/>
+  <path d="M256 68V112"/>
+</g>
+</svg>

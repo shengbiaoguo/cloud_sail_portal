@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128" fill="none">
+  <title>投稿流程不够清晰</title>
+  <g color="#2563EB" stroke="currentColor" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="18" y="24" width="26" height="18" rx="6" />
+    <rect x="52" y="24" width="26" height="18" rx="6" opacity="0.7"/>
+    <rect x="86" y="24" width="24" height="18" rx="6" opacity="0.45"/>
+    <path d="M44 33h8" />
+    <path d="M78 33h8" />
+    <circle cx="31" cy="80" r="13" />
+    <path d="M48 80h17" />
+    <circle cx="82" cy="80" r="13" opacity="0.7"/>
+    <path d="M95 80h9" />
+    <circle cx="109" cy="80" r="3" opacity="0.5"/>
+  </g>
+</svg>
