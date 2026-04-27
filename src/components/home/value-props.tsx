@@ -39,32 +39,42 @@ export function ValueProps() {
   return (
     <section className="py-14 md:py-20">
       <Container>
-        <div className="flex gap-8">
+        <div className="flex flex-col gap-6 lg:flex-row lg:gap-8">
           <Image
             src="/home/value_props/images/valueprops-illustration.png"
             alt="专业服务支持投稿准备"
             width={1122}
             height={1402}
-            className="rounded-lg w-90 shrink-0"
+            className="h-auto w-full max-w-[420px] self-center rounded-lg lg:w-90 lg:max-w-none lg:self-start lg:shrink-0"
           />
 
-          <div className="flex-1">
+          <div className="min-w-0 flex-1">
             <HomeSectionTitle
               title="以专业服务支持更高质量的投稿准备"
               subtitle="我们注重学术规范与服务体验，助力作者更自信地推进国际期刊投稿。"
               centered={false}
             />
-            <ul className="mt-7 grid gap-5 sm:grid-cols-2">
+            <ul className="mt-6 grid gap-4 sm:mt-7 md:grid-cols-2 md:gap-5">
               {ADVANTAGES.map((item) => (
                 <li
                   key={item.title}
-                  className="rounded-xl border border-[var(--line)] bg-white p-3"
+                  className="rounded-xl border border-[var(--line)] bg-white p-3 sm:p-4"
                 >
-                  <div className="flex items-start gap-1">
-                    <Image src={item.icon} alt={item.title} width={60} height={60} />
+                  <div className="flex items-start gap-2 sm:gap-3">
+                    <Image
+                      src={item.icon}
+                      alt={item.title}
+                      width={60}
+                      height={60}
+                      className="h-12 w-12 shrink-0 sm:h-[60px] sm:w-[60px]"
+                    />
                     <div>
-                      <h3 className="text-base font-semibold text-[#1b3768]">{item.title}</h3>
-                      <p className="mt-2 text-sm leading-6 text-[var(--muted)]">{item.desc}</p>
+                      <h3 className="text-sm font-semibold text-[#1b3768] sm:text-base">
+                        {item.title}
+                      </h3>
+                      <p className="mt-1.5 text-sm leading-6 text-[var(--muted)] sm:mt-2">
+                        {item.desc}
+                      </p>
                     </div>
                   </div>
                 </li>
