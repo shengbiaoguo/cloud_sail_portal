@@ -1,5 +1,10 @@
-import { redirect } from "next/navigation";
+import { NewsListContent } from "./page/[page]/page";
 
-export default function NewsIndexPage() {
-  redirect("/news/page/1");
+type NewsIndexPageProps = {
+  searchParams: Promise<{ category?: string }>;
+};
+
+export default async function NewsIndexPage({ searchParams }: NewsIndexPageProps) {
+  const { category } = await searchParams;
+  return <NewsListContent pageNumber={1} category={category} />;
 }

@@ -29,11 +29,15 @@ export type NewsItem = SeoFields & {
   id: number;
   title: string;
   slug: string;
+  category?: string;
+  categoryLabel?: string;
+  tags?: string[];
   summary?: string;
   coverImage?: string;
   content?: string;
   status?: string;
   publishedAt?: string;
+  viewCount?: number;
 };
 
 export type SiteConfig = {

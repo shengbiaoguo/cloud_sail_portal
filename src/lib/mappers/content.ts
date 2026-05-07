@@ -54,15 +54,27 @@ export function mapCaseStudyItem(raw: Record<string, unknown>): CaseStudyItem {
 
 export function mapNewsItem(raw: Record<string, unknown>): NewsItem {
   const seo = raw as RawSeo;
+  const rawTags = raw.tags;
+  const tags = Array.isArray(rawTags)
+    ? rawTags.filter((item): item is string => typeof item === "string")
+    : [];
   return {
     id: Number(raw.id),
     title: String(raw.title ?? ""),
     slug: String(raw.slug ?? ""),
+    category: raw.category ? String(raw.category) : undefined,
+    categoryLabel: raw.categoryLabel ? String(raw.categoryLabel) : undefined,
+    tags,
     summary: raw.summary ? String(raw.summary) : undefined,
-    coverImage: raw.cover_image ? String(raw.cover_image) : undefined,
+    coverImage: raw.cover_image
+      ? String(raw.cover_image)
+      : raw.coverImage
+        ? String(raw.coverImage)
+        : undefined,
     content: raw.content ? String(raw.content) : undefined,
     status: raw.status ? String(raw.status) : undefined,
     publishedAt: raw.published_at ? String(raw.published_at) : undefined,
+    viewCount: typeof raw.viewCount === "number" ? raw.viewCount : undefined,
     seoTitle: seo.seo_title,
     seoDescription: seo.seo_description,
     seoKeywords: normalizeSeoKeywords(seo.seo_keywords),

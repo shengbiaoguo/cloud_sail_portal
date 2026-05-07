@@ -34,3 +34,9 @@ a {
   /* color: inherit; */
   text-decoration: none;
 }
+
+.rich_text_container img {
+  display: inline-block !important;
+  max-width: 100%;
+  height: auto;
+}
